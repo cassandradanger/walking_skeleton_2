@@ -15,17 +15,14 @@ router.post('/add', function(request, response, next){
     });
 });
 
-router.delete('/remove', function (request, response, next){
-    var kitty = Cat.find({name: request.body.name});
-    kitty.remove(function(err){
-        if(err)console.log('xxx %s', err);
-
-        return Cat.find({}).exec(function(err, cats){
-            if(err) throw new Error(err);
-            response.send(JSON.stringify(cats));
-            //next();
-        });
+router.post('/remove', function(req, res, next) {
+    var kitty = Cat.find({name: req.body.name});
+    kitty.remove(function(error) {
+        if (error) console.log('Error when removing cat: %s', error);
     });
+
+    var file = req.params[0] || 'views/index.html';
+    res.sendFile(path.join(__dirname, '../public', file));
     //next();
 });
 

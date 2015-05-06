@@ -1,0 +1,46 @@
+body{
+    background-color: #333333;
+
+}
+
+h1{
+    color: #e65266;
+    text-align: center;
+    padding-top: 20px;
+}
+
+img{
+    display: block;
+    margin: 10px auto 10px auto;
+}
+
+li{
+    padding: 5px;
+    text-align: center;
+    list-style: none;
+    font-size: 15px;
+    color: #56d176;
+}
+
+.test{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+}
+
+.container{
+    text-align: center;
+}
+
+ul{
+    text-align: center;
+}
+
+.btn{
+    color: black;
+}
+
+h4{
+    color:white;
+}

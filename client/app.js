@@ -17,8 +17,10 @@ app.controller("IndexController", ['$scope', '$http', function($scope, $http){
         return $http.post('/add', cat).then(fetchCats);
     };
 
-    $scope.remove = function(cat){
-        return $http.delete('/remove', cat);
-    }
+    // Removes a cat, then fetches all cats
+    $scope.remove = function(cat) {
+        return $http.post('/remove', cat).then(fetchCats);
+    };
+    // Fetch cats once when we open the page
     fetchCats();
 }]);
